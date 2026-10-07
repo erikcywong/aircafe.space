@@ -1,0 +1,46 @@
+# aircafe.space — DNS 配置（域名商：domain.com，NS = NS1/NS2.DOMAIN.COM）
+# 生成时间：2026-10-07
+#
+# 背景：浏览器报 ERR_CERT_AUTHORITY_INVALID，根因不是证书问题，
+#       而是 aircafe.space 仍解析到域名商停放 IP 208.91.197.27，
+#       GitHub Pages 无法验证域名控制权，因此无法签发 Let's Encrypt 证书。
+#       GitHub 侧已就绪：status=built，source=main /，cname=aircafe.space，certificate_state=none。
+#
+# ── 第 1 步：在 domain.com 后台删除原有停放记录 ────────────────────────────
+#   删除指向 208.91.197.27 的 A 记录（@ 本身以及可能存在的 www 记录）。
+#   进入路径：My Domains → aircafe.space → DNS & Nameservers → Manage DNS
+#
+# ── 第 2 步：添加以下 5 条记录 ────────────────────────────────────────────
+#   TYPE    NAME    VALUE / TARGET
+#   A       @       185.199.108.153
+#   A       @       185.199.109.153
+#   A       @       185.199.110.153
+#   A       @       185.199.111.153
+#   CNAME   www     erikcywong.github.io
+#
+#   注意：
+#   - NAME 填 @ 表示根域（部分控制台需留空或填 aircafe.space）
+#   - CNAME 值只填主机名，不要加 https:// 前缀，不要末尾加句点
+#   - TTL 保持默认（通常 3600 或 Auto）即可
+#   - 不要使用 ALIAS/ANAME 指向根域到 github.io（GitHub 官方不支持）
+#
+# ── 第 3 步：等待生效 ────────────────────────────────────────────────────
+#   DNS 传播一般 10–60 分钟。验证命令：
+#     nslookup aircafe.space 8.8.8.8
+#     → 应返回 185.199.108.153 等 GitHub 四个 IP，而非 208.91.197.27
+#     nslookup www.aircafe.space 8.8.8.8
+#     → 应显示 canonical name = erikcywong.github.io
+#
+# ── 第 4 步：开启 HTTPS 强制 ─────────────────────────────────────────────
+#   解析生效后 GitHub 会自动签发证书（再等几分钟至 1 小时）。
+#   然后调用 API 打开 Enforce HTTPS：
+#     PATCH https://api.github.com/repos/erikcywong/aircafe.space/pages
+#     body: {"https_enforced": true}
+#
+# ── 临时可用地址（域名生效前）───────────────────────────────────────────
+#   https://erikcywong.github.io/aircafe.space/
+#   该地址证书有效，内容与正式站一致（正式域会在 CNAME 生效后 301 跳回）。
+#
+# ── 与用户其他站点的惯例保持一致 ────────────────────────────────────────
+#   fec-coffee.space / regal-coffee.space / kuok-coffee.space 均使用同一套
+#   A 记录（185.199.108–111.153）+ www CNAME → erikcywong.github.io。
