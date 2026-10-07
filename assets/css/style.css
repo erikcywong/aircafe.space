@@ -245,6 +245,7 @@ td b{color:var(--text);}
 .person .ava.a2{background:linear-gradient(135deg,#00ba7c,#0a7d56);}
 .person .ava.a3{background:linear-gradient(135deg,#d4a94e,#9c7726);color:#1a1305;}
 .person .ava.a4{background:linear-gradient(135deg,#787cf0,#4a4dbb);}
+.person .ava img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;}
 .person .ava.vac{background:transparent;border:1px dashed var(--border2);color:var(--muted);font-weight:600;font-size:20px;}
 .person h3{font-size:15.5px;font-weight:700;letter-spacing:.1px;}
 .person .role{font-size:11.5px;font-weight:700;letter-spacing:.5px;margin-top:5px;}
