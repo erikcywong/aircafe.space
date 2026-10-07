@@ -76,6 +76,8 @@ nav.links a.on{color:var(--accent);background:var(--accent-dim);}
 .hero .lede{color:var(--muted);margin-top:16px;max-width:850px;font-size:14px;}
 .hero .lede b{color:var(--body);font-weight:600;}
 .hero .rule{width:56px;height:3px;background:var(--accent);margin-top:24px;border-radius:2px;}
+.hero .splash{font-size:13px;font-weight:700;letter-spacing:.4px;color:var(--accent);margin:0 0 12px;}
+.hero .splash.after{margin:20px 0 0;}
 
 /* ---------- sections ---------- */
 section{padding:44px 0 6px;}
