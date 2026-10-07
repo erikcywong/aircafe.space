@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>土地与需求逻辑 | Land & Demand Thesis — AIRCAFE.SPACE</title>
+<meta name="description" content="ICO 2050 咖啡适宜土地减少50%情景、从全球土地到可服务市场的漏斗测算，以及为什么这不是一轮周期性押注">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000000'/%3E%3Ctext x='16' y='23' font-size='19' font-family='Arial' font-weight='bold' fill='%231d9bf0' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <span class="b">AIRCA<b>F</b>E</span>
+      <span class="s"><span class="en">AIRCAFE.SPACE · Aeroponic Coffee Cultivation</span><span class="zh">AIRCAFE.SPACE · 雾化咖啡种植技术</span></span>
+    </a>
+    <nav class="links">
+      <a href="index.html"><span class="en">Summary</span><span class="zh">摘要</span></a>
+      <div class="navdrop">
+        <a href="technology.html"><span class="en">Technology</span><span class="zh">技术护城河</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Technology</span><span class="zh">技术护城河</span></span>
+          <a href="technology.html"><span class="en">Patent & Novelty</span><span class="zh">专利与新颖性</span></a>
+          <a href="architecture.html"><span class="en">System Architecture</span><span class="zh">系统架构</span></a>
+          <a href="comparison.html"><span class="en">Approach Comparison</span><span class="zh">技术路线对比</span></a>
+          <a href="techrisk.html"><span class="en">Technical Risk</span><span class="zh">技术风险</span></a>
+        </div>
+      </div>
+      <div class="navdrop">
+        <a href="traction.html"><span class="en">Traction</span><span class="zh">幼苗期进展</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Traction</span><span class="zh">幼苗期进展</span></span>
+          <a href="traction.html"><span class="en">Validated & Not</span><span class="zh">已验证与未完成</span></a>
+          <a href="milestones.html"><span class="en">18-Month Ladder</span><span class="zh">18个月里程碑</span></a>
+        </div>
+      </div>
+      <div class="navdrop open">
+        <a href="market.html" class="on"><span class="en">Market</span><span class="zh">市场逻辑</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Market</span><span class="zh">市场逻辑</span></span>
+          <a href="market.html"><span class="en">Land & Demand Thesis</span><span class="zh">土地与需求逻辑</span></a>
+          <a href="customers.html"><span class="en">Customers & Landscape</span><span class="zh">客户与竞争格局</span></a>
+        </div>
+      </div>
+      <a href="team.html"><span class="en">Team</span><span class="zh">创始团队</span></a>
+      <div class="navdrop">
+        <a href="proposal.html"><span class="en">Investment Invitation</span><span class="zh">投资邀请</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Investment Invitation</span><span class="zh">投资邀请</span></span>
+          <a href="proposal.html"><span class="en">Term Sheet</span><span class="zh">条款清单</span></a>
+          <a href="rationale.html"><span class="en">Technology & Trial Field</span><span class="zh">技术与试验田</span></a>
+          <a href="funds.html"><span class="en">Use of Funds</span><span class="zh">资金用途</span></a>
+          <a href="returns.html"><span class="en">Return Scenarios</span><span class="zh">回报情景</span></a>
+          <a href="risks.html"><span class="en">Risk & Governance</span><span class="zh">风险与治理</span></a>
+          <a href="contact.html"><span class="en">Next Steps & Contact</span><span class="zh">下一步与联系</span></a>
+        </div>
+      </div>
+      <button class="langbtn" id="langToggle">English</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div class="eyebrow">
+    <span class="tag"><span class="en">4.1 · The Structural Trigger</span><span class="zh">4.1 · 结构性触发条件</span></span>
+    <span class="tag gold"><span class="en">4.2 · Market Sizing</span><span class="zh">4.2 · 市场测算</span></span>
+    <span class="tag green"><span class="en">4.4 · Why It Is Not Cyclical</span><span class="zh">4.4 · 为何不是周期性押注</span></span>
+  </div>
+  <h1 class="en">The Trigger Is a <em>Land</em> Problem, Not a Price Problem</h1>
+  <h1 class="zh">触发条件是<em>土地</em>问题，不是价格问题</h1>
+  <p class="lede en">Coffee has had bad price years before and recovered. What is different this time is that the growing area itself is contracting, on a schedule set by climate rather than by any commodity cycle.</p>
+  <p class="lede zh">咖啡经历过糟糕的价格年份，并且都恢复了。这次不同之处在于：种植面积本身正在收缩，而这份时间表由气候决定，不由任何大宗商品周期决定。</p>
+  <div class="rule"></div>
+</div>
+
+<div class="wrap">
+
+<section>
+    <div class="sechead"><span class="secno">4.1</span><h2 class="sec"><span class="en">The Structural Trigger</span><span class="zh">结构性触发条件</span></h2></div>
+    <div class="grid g2">
+      <div class="chart">
+        <div class="ct"><span class="en">Coffee-Suitable Land, ICO Scenario (million hectares)</span><span class="zh">咖啡适宜种植土地，ICO 情景（百万公顷）</span></div>
+        <div class="cs"><span class="en">Baseline ~12.5m ha today → ~6.25m ha by 2050 under climate stress</span><span class="zh">当前约 1,250 万公顷 → 2050 年气候压力下约 625 万公顷</span></div>
+        <div id="chartLand" class="cht"></div>
+      </div>
+      <div>
+        <div class="grid" style="gap:13px;">
+          <div class="kpi"><div class="l"><span class="en">Coffee economy at risk</span><span class="zh">受威胁的咖啡经济</span></div>
+            <div class="v red">&gt;US$200bn</div>
+            <div class="d"><span class="en">Global coffee sector value; retail-end materially larger</span><span class="zh">全球咖啡产业规模；零售端更大</span></div></div>
+          <div class="kpi"><div class="l"><span class="en">Livelihoods dependent</span><span class="zh">依赖生计人口</span></div>
+            <div class="v red">125m</div>
+            <div class="d"><span class="en">People whose income runs through the coffee chain (ICO)</span><span class="zh">收入依赖咖啡产业链的人口（ICO）</span></div></div>
+          <div class="kpi"><div class="l"><span class="en">Current shock cycle</span><span class="zh">当前冲击周期</span></div>
+            <div class="v amber">El Niño 2026</div>
+            <div class="d"><span class="en">Drought and heat stress accelerating replanting decisions across producing regions</span><span class="zh">干旱与高温压力正加速各产区的复种决策</span></div></div>
+          <div class="kpi"><div class="l"><span class="en">Why the plant cannot adapt</span><span class="zh">为什么植株无法适应</span></div>
+            <div class="v" style="font-size:19px;"><span class="en">30-year perennial</span><span class="zh">30 年生作物</span></div>
+            <div class="d"><span class="en">Land must shift, or plants must be replaced — there is no third option</span><span class="zh">要么土地迁移，要么植株更换——没有第三种选择</span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note"><span class="en">Land-contraction path is a 5-year-step interpolation of the ICO climate scenario used in our prior research and should be read as an illustrative trajectory, not a point forecast. The −50% figure refers to land suitability by 2050 under climate stress.</span><span class="zh">土地缩减路径为 ICO 气候情景的五年步长插值（引自此前研究），应作为示意性趋势而非点位预测。−50% 指 2050 年气候压力下的土地适宜性。</span></p>
+  </section>
+<section>
+    <div class="sechead"><span class="secno">4.2</span><h2 class="sec"><span class="en">From Global Land to Our Addressable Market</span><span class="zh">从全球土地到我们的可服务市场</span></h2></div>
+    <div class="flow">
+      <div class="fnode"><b><span class="en">TAM · Global seedling demand</span><span class="zh">TAM · 全球咖啡苗年需求</span></b><span class="en">12.5m ha × 3,000–5,000 plants/ha = 37–63bn standing plants; 2–3% annual renewal → <b>0.8–1.9bn seedlings/yr</b></span><span class="zh">1,250万公顷 × 3,000–5,000株/公顷 = 375–625亿株存量；年更新 2–3% → <b>8–19 亿株/年</b></span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b><span class="en">SAM · Value-addressable segment</span><span class="zh">SAM · 可价值化细分</span></b><span class="en">Climate-resilient, traceable, quality-consistent stock at ~0.5% penetration → <b>3,750–9,400万株/年 → ¥0.94–2.35bn</b></span><span class="zh">气候抗逆、可追溯、品质稳定的种苗，按 0.5% 渗透 → <b>3,750–9,400 万株/年 → ¥9.4–23.5 亿</b></span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b><span class="en">SOM · 3-year target</span><span class="zh">SOM · 3年目标</span></b><span class="en"><b>¥50–100m revenue</b> ≈ 2–5% of SAM, via 6–30 modules of self-operated capacity</span><span class="zh"><b>¥5,000万–1亿收入</b>，约占 SAM 的 2–5%，通过 6–30 个自营模块实现</span></div>
+    </div>
+    <p class="note"><span class="en">Derived from ICO planting-density and renewal-rate ranges, not from a commissioned market study. We consider the 0.5% penetration assumption the most sensitive input — a 0.2% outcome still yields a ¥380m SAM, roughly 4× what the 3-year target requires.</span><span class="zh">基于 ICO 的种植密度与更新率区间推算，非委托市场研究。我们认为 0.5% 渗透率是最敏感假设——即便只做到 0.2%，SAM 仍有 ¥3.8 亿，约为3年目标需求的 4 倍。</span></p>
+  </section>
+<section>
+    <div class="sechead"><span class="secno">4.4</span><h2 class="sec"><span class="en">Why This Is Not a Cyclical Bet</span><span class="zh">为什么这不是一轮周期性押注</span></h2></div>
+    <div class="quote">
+      <p class="en">Coffee demand is inelastic and consumption is habitual; the plant is a 30-year asset; the shock is climatically forced. Seedling demand is therefore driven by biology and weather, not by GDP or by consumer sentiment cycles.</p>
+      <p class="zh">咖啡需求刚性、消费习惯化；植株是 30 年资产；冲击来自气候。因此幼苗需求由生物学与天气驱动，而非 GDP 或消费信心周期。</p>
+      <span class="en">The three-part structural argument</span>
+      <span class="zh">三段式结构性论证</span>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3><span class="en">1 · The replacement clock</span><span class="zh">1 · 替换时钟</span></h3>
+        <p class="en">Coffee bushes are replaced on a biological schedule that cannot be deferred indefinitely. Unlike discretionary consumer categories, this spending happens in bad years and good ones.</p>
+        <p class="zh">咖啡树按生物周期被替换，无法无限期推迟。与可选消费品不同，这项支出在景气与不景气年份都要发生。</p></div>
+      <div class="card"><h3><span class="en">2 · The climate accelerant</span><span class="zh">2 · 气候加速器</span></h3>
+        <p class="en">Every El Niño cycle front-loads replanting decisions that would otherwise have taken a decade. Shock events compress demand into short windows.</p>
+        <p class="zh">每一轮厄尔尼诺都会把原本要花十年做出的复种决策提前。冲击事件把需求压缩进短窗口。</p></div>
+      <div class="card"><h3><span class="en">3 · The localisation pull</span><span class="zh">3 · 本地化拉动</span></h3>
+        <p class="en">Imported seedlings carry quarantine cost, freight and 3–6 month lead times. A production system that works anywhere with power and water removes the geography constraint entirely.</p>
+        <p class="zh">进口苗木承担检疫成本、运费与 3–6 个月交期。一套只要有电和水就能运转的生产系统，直接消除了地理约束。</p></div>
+    </div>
+  </section>
+<div class="secnav"><a href="market.html" class="on"><span class="en">Land & Demand Thesis</span><span class="zh">土地与需求逻辑</span></a><a href="customers.html"><span class="en">Customers & Landscape</span><span class="zh">客户与竞争格局</span></a></div>
+<div class="pager"><a href="milestones.html"><div class="pk"><span class="en">← Previous</span><span class="zh">← 上一页</span></div><div class="pt"><span class="en">18-Month Ladder</span><span class="zh">18个月里程碑</span></div></a><a class="nx" href="customers.html"><div class="pk"><span class="en">Next →</span><span class="zh">下一页 →</span></div><div class="pt"><span class="en">Customers & Landscape</span><span class="zh">客户与竞争格局</span></div></a></div>
+</div>
+
+<footer><div class="wrap">
+  <span class="en">Published by the AIRCAFE project team. Technical and operating information only — not an offer of securities. Sources: AIRCAFE aeroponic coffee cultivation system operating model and cost accounting; Chinese invention patent application P2026061510002 (acceptance notice 2026-07-23, preliminary examination passed 2026-09-09); ICO coffee climate research. FX reference US$1 ≈ ¥7.1. 2026-10-07.</span>
+  <span class="zh">由 AIRCAFE 项目团队发布。仅为技术与运营信息，不构成任何证券要约。数据来源：AIRCAFE 雾化水培咖啡种植系统运营模型与成本核算；中国发明专利申请 P2026061510002（受理通知书 2026-07-23，初步审查合格 2026-09-09）；ICO 咖啡气候研究。汇率参考 US$1 ≈ ¥7.1。2026-10-07。</span>
+</div></footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/chrome.js"></script>
+<script>
+function L(en, zh) { return (window.NAP_LANG && window.NAP_LANG() === "zh") ? zh : en; }
+
+function renderLand() {
+  var el = document.getElementById("chartLand");
+  if (!el) return;
+  echarts.dispose(el);
+  echarts.init(el).setOption({
+    backgroundColor: "transparent",
+    textStyle: { color: "#c9cdd1" },
+    tooltip: { trigger: "axis", valueFormatter: function (v) { return v + L(" m ha", " 百万公顷"); } },
+    grid: { left: 55, right: 40, top: 30, bottom: 30 },
+    xAxis: { type: "category", data: ["2020", "2030", "2040", "2050"],
+             axisLabel: { color: "#71767b" }, axisLine: { lineStyle: { color: "#2a3543" } } },
+    yAxis: { type: "value", min: 500, max: 1350, name: L("m ha", "百万公顷"), nameTextStyle: { color: "#71767b" },
+             axisLabel: { color: "#71767b" }, splitLine: { lineStyle: { color: "#1c2530" } } },
+    series: [{
+      type: "line", smooth: true, symbolSize: 9,
+      data: [1250, 1080, 850, 625],
+      itemStyle: { color: "#f4212e" }, lineStyle: { width: 3, color: "#f4212e" },
+      areaStyle: { color: "rgba(244,33,46,.16)" },
+      label: { show: true, color: "#e7e9ea", fontWeight: "bold", formatter: "{c}" },
+      markLine: {
+        silent: true, symbol: "none",
+        lineStyle: { color: "#71767b", type: "dashed", width: 1 },
+        data: [{ yAxis: 625, label: { formatter: L("−50%", "−50%"), color: "#f4212e", fontSize: 12, position: "insideEndTop" } }]
+      }
+    }]
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderLand);
+window.addEventListener("langchange", function () { setTimeout(renderLand, 0); });
+</script>
+</body>
+</html>
+
+</body>
+</html>

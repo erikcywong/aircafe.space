@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIRCAFE.SPACE — 雾化咖啡全周期种植系统 | Aeroponic Coffee, Full Cycle</title>
+<meta name="description" content="全球首个气液式雾化咖啡全周期种植系统 — AIRCAFE.SPACE：从幼苗到挂果的全周期雾化种植技术与试验田方案">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000000'/%3E%3Ctext x='16' y='23' font-size='19' font-family='Arial' font-weight='bold' fill='%231d9bf0' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">
+      <span class="b">AIRCA<b>F</b>E</span>
+      <span class="s"><span class="en">AIRCAFE.SPACE · Aeroponic Coffee Cultivation</span><span class="zh">AIRCAFE.SPACE · 雾化咖啡种植技术</span></span>
+    </a>
+    <nav class="links">
+      <a href="index.html" class="on"><span class="en">Summary</span><span class="zh">摘要</span></a>
+      <div class="navdrop">
+        <a href="technology.html"><span class="en">Technology</span><span class="zh">技术护城河</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Technology</span><span class="zh">技术护城河</span></span>
+          <a href="technology.html"><span class="en">Patent & Novelty</span><span class="zh">专利与新颖性</span></a>
+          <a href="architecture.html"><span class="en">System Architecture</span><span class="zh">系统架构</span></a>
+          <a href="comparison.html"><span class="en">Approach Comparison</span><span class="zh">技术路线对比</span></a>
+          <a href="techrisk.html"><span class="en">Technical Risk</span><span class="zh">技术风险</span></a>
+        </div>
+      </div>
+      <div class="navdrop">
+        <a href="traction.html"><span class="en">Traction</span><span class="zh">幼苗期进展</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Traction</span><span class="zh">幼苗期进展</span></span>
+          <a href="traction.html"><span class="en">Validated & Not</span><span class="zh">已验证与未完成</span></a>
+          <a href="milestones.html"><span class="en">18-Month Ladder</span><span class="zh">18个月里程碑</span></a>
+        </div>
+      </div>
+      <div class="navdrop">
+        <a href="market.html"><span class="en">Market</span><span class="zh">市场逻辑</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Market</span><span class="zh">市场逻辑</span></span>
+          <a href="market.html"><span class="en">Land & Demand Thesis</span><span class="zh">土地与需求逻辑</span></a>
+          <a href="customers.html"><span class="en">Customers & Landscape</span><span class="zh">客户与竞争格局</span></a>
+        </div>
+      </div>
+      <a href="team.html"><span class="en">Team</span><span class="zh">创始团队</span></a>
+      <div class="navdrop">
+        <a href="proposal.html"><span class="en">Investment Invitation</span><span class="zh">投资邀请</span></a>
+        <div class="navmenu">
+          <span class="ml"><span class="en">Investment Invitation</span><span class="zh">投资邀请</span></span>
+          <a href="proposal.html"><span class="en">Term Sheet</span><span class="zh">条款清单</span></a>
+          <a href="rationale.html"><span class="en">Technology & Trial Field</span><span class="zh">技术与试验田</span></a>
+          <a href="funds.html"><span class="en">Use of Funds</span><span class="zh">资金用途</span></a>
+          <a href="returns.html"><span class="en">Return Scenarios</span><span class="zh">回报情景</span></a>
+          <a href="risks.html"><span class="en">Risk & Governance</span><span class="zh">风险与治理</span></a>
+          <a href="contact.html"><span class="en">Next Steps & Contact</span><span class="zh">下一步与联系</span></a>
+        </div>
+      </div>
+      <button class="langbtn" id="langToggle">English</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div class="eyebrow">
+    <span class="tag gold">机密 · <span class="en">Confidential</span><span class="zh">仅限受邀方</span></span>
+    <span class="tag"><span class="en">Seed Round · the AIRCAFE project team</span><span class="zh">种子轮 · AIRCAFE 项目团队</span></span>
+    <span class="tag green"><span class="en">Invention Patent P2026061510002 · Preliminary Examination Passed</span><span class="zh">发明专利 P2026061510002 · 初审合格</span></span>
+  </div>
+  <h1 class="en">The World's First <em>Gas-Liquid Aeroponic</em> Full-Cycle Coffee Cultivation System</h1>
+  <h1 class="zh">全球首个 <em>气液式雾化</em> 咖啡全周期种植系统</h1>
+  <p class="lede en">AIRCAFE has validated the core process of aeroponic coffee seedling production: a <b>4-month growth cycle</b>, <b>3 batches per year</b>, <b>¥6.61 cost per seedling</b> against a <b>¥25 selling price</b> — a <b>73.5% unit gross margin</b>. The underlying method is filed as an invention patent and passed preliminary examination on 9 September 2026. We are still at seedling stage: no mass production, no scaled revenue, no purchase commitments. That is precisely why entry cost today is the lowest it will ever be.</p>
+  <p class="lede zh">AIRCAFE已完成雾化水培咖啡幼苗的核心工艺验证：<b>4个月生长周期</b>、<b>年产3批</b>、<b>单株成本 ¥6.61</b>、<b>单株售价 ¥25</b>，单位<b>毛利率 73.5%</b>。其核心方法已申请发明专利，并于 2026 年 9 月 9 日通过初步审查。我们仍处幼苗期：未量产、无规模化收入、无采购订单承诺。正因如此，今天的进入成本将是历史最低点。</p>
+  <div class="rule"></div>
+</div>
+
+<div class="wrap">
+
+<section>
+    <div class="sechead"><span class="secno">01</span><h2 class="sec"><span class="en">Key Metrics at a Glance</span><span class="zh">关键指标速览</span></h2></div>
+    <div class="grid kpis">
+      <div class="kpi"><div class="l"><span class="en">Trial-Field Ticket</span><span class="zh">试验田出资额</span></div>
+        <div class="v blue">US$300,000</div>
+        <div class="d"><span class="en">Seedling-to-fruit cycle · terms discussed bilaterally</span><span class="zh">覆盖幼苗到挂果全周期 · 具体条款双边商谈</span></div></div>
+      <div class="kpi"><div class="l"><span class="en">Unit Gross Margin</span><span class="zh">单位毛利率</span></div>
+        <div class="v green">73.5%</div>
+        <div class="d"><span class="en">¥6.61 cost vs ¥25 price per seedling</span><span class="zh">单株成本 ¥6.61 / 售价 ¥25</span></div></div>
+      <div class="kpi"><div class="l"><span class="en">Output per Module</span><span class="zh">单模块年产能</span></div>
+        <div class="v">615,000 <small><span class="en">pcs/yr</span><span class="zh">株/年</span></small></div>
+        <div class="d"><span class="en">≈¥15.4m annual revenue per module</span><span class="zh">单模块年收入 ≈¥1,540万</span></div></div>
+      <div class="kpi"><div class="l"><span class="en">Growth Cycle</span><span class="zh">生长周期</span></div>
+        <div class="v amber">4 <small><span class="en">months</span><span class="zh">个月</span></small></div>
+        <div class="d"><span class="en">3 batches/yr · soil nursery takes 12–18 months</span><span class="zh">年产3批 · 传统土壤苗圃需12–18个月</span></div></div>
+      <div class="kpi"><div class="l"><span class="en">Patent Asset</span><span class="zh">专利资产</span></div>
+        <div class="v purple">1</div>
+        <div class="d"><span class="en">Invention patent, prelim. exam passed 2026-09-09</span><span class="zh">发明专利，2026-09-09 初审合格</span></div></div>
+      <div class="kpi"><div class="l"><span class="en">Structural Trigger</span><span class="zh">结构性触发</span></div>
+        <div class="v red">−50%</div>
+        <div class="d"><span class="en">ICO: coffee-suitable land may halve by 2050</span><span class="zh">ICO：2050年咖啡适宜种植土地或减半</span></div></div>
+    </div>
+    <p class="note"><span class="en">Round terms are our opening proposal and remain open to negotiation. Unit economics derive from the AIRCAFE cultivation-system cost model (napell.space); FX reference US$1 ≈ ¥7.1.</span><span class="zh">融资条款为我方初步提案，仍可协商。单位经济数据来自 AIRCAFE 种植系统成本模型（napell.space）；汇率参考 US$1 ≈ ¥7.1。</span></p>
+  </section>
+<section>
+    <div class="sechead"><span class="secno">02</span><h2 class="sec"><span class="en">The Three Things That Matter</span><span class="zh">三件最重要的事</span></h2></div>
+    <div class="grid tldr">
+      <div class="card">
+        <h3 class="en">🧬 <span class="blue">What we actually built</span></h3>
+        <h3 class="zh">🧬 <span class="blue">我们真正做出来的东西</span></h3>
+        <p class="en">Not a container farm, not a piece of hardware. A <b>gas-liquid aeroponic full-cycle management method and system</b> — a closed loop that reads root-zone conditions, adjusts nutrient mist, timing and light, and returns the data to the recipe. Coffee seedlings reach transplant grade in 4 months, three times a year, with no soil and no pesticides.</p>
+        <p class="zh">不是集装箱农场，也不是单台设备，而是一套<b>《基于气液式雾化的全周期种植管理方法及系统》</b>——读取根系微环境、动态调节营养雾配比与喷淋时序、光照，并将数据回流至配方模型的闭环系统。咖啡幼苗 4 个月达到移栽标准，一年三批，不用土、不打药。</p>
+      </div>
+      <div class="card">
+        <h3 class="en">📐 <span class="green">We sell seedlings, not coffee</span></h3>
+        <h3 class="zh">📐 <span class="green">我们卖苗，不卖豆</span></h3>
+        <p class="en">This is the single most important framing. The customer is the <b>coffee plantation, the nursery operator, the replanting programme</b> — not the roaster, not the supply-chain procurement desk. No brand war, no retail shelf, no price fight with incumbents. A ¥6.61 cost against a ¥25 market price, replicated module by module.</p>
+        <p class="zh">这是最关键的一点。客户是<b>咖啡种植园、苗木商、复种计划</b>——不是烘焙商，不是供应链采购部门。没有品牌战、没有货架之争、不与现有玩家打价格战。¥6.61 成本对 ¥25 市场价，模块化逐台复制。</p>
+      </div>
+      <div class="card">
+        <h3 class="en">🎯 <span class="gold">Why now, and why a trial field</span></h3>
+        <h3 class="zh">🎯 <span class="gold">为什么是现在，为什么是这块试验田</span></h3>
+        <p class="en">We are inside the window where the patent has passed preliminary examination but has not yet been granted, and the process is validated but not yet industrialised. AIRCAFE's stated thesis — <b>invest early, invest small</b>, dual-carbon technology, rural and industrial internet, AI + hardware — maps onto this asset almost line for line, with Xiaomi-ecosystem supply-chain capability as the multiplier.</p>
+        <p class="zh">我们正处在一个特定窗口：专利已初审合格但尚未授权，工艺已验证但尚未工业化。AIRCAFE公开的投资主张——<b>投早、投小</b>、双碳科技、农村互联网与产业互联网、AI+硬件——与本项目几乎逐条对应，而小米生态的硬件供应链能力则是放大器。</p>
+      </div>
+    </div>
+    <div class="quote">
+      <p class="en">We are not asking AIRCAFE to buy seedlings. We are inviting AIRCAFE to be the first institutional capital in a patented control system that turns coffee cultivation into a manufactured process.</p>
+      <p class="zh">我们不打算把幼苗卖给你。我们邀请的是：成为这套受专利保护的控制系统的第一位机构资本——这套系统把咖啡种植变成一道可被制造的工艺。</p>
+      <span class="en">Positioning statement for this round</span>
+      <span class="zh">本轮立场声明</span>
+    </div>
+  </section>
+<section>
+    <div class="sechead"><span class="secno">03</span><h2 class="sec"><span class="en">Unit Economics in One View</span><span class="zh">一图看懂单位经济</span></h2></div>
+    <div class="grid g2">
+      <div class="chart">
+        <div class="ct"><span class="en">Per-Seedling Value Split (¥)</span><span class="zh">单株价值构成（元）</span></div>
+        <div class="cs"><span class="en">¥25.00 selling price = ¥6.61 cost + ¥18.39 gross profit</span><span class="zh">售价 ¥25.00 = 成本 ¥6.61 + 毛利 ¥18.39</span></div>
+        <div id="chartValue" class="cht"></div>
+      </div>
+      <div class="chart">
+        <div class="ct"><span class="en">Cost Structure per Seedling (¥6.61)</span><span class="zh">单株成本结构（¥6.61）</span></div>
+        <div class="cs"><span class="en">Energy is the largest single cost line — and the one the patent most directly attacks</span><span class="zh">能耗是最大单项成本——也是本专利最直接压缩的一项</span></div>
+        <div id="chartCost" class="cht"></div>
+      </div>
+    </div>
+    <div class="econ" style="margin-top:14px;">
+      <div class="eco"><div class="v">US$414K</div><div class="l"><span class="en">Capex per standard module (≈¥300万)</span><span class="zh">单标准模块资本开支（≈¥300万）</span></div></div>
+      <div class="eco"><div class="v">10.8 <span style="font-size:12px"><span class="en">acres</span><span class="zh">英亩</span></span></div><div class="l"><span class="en">Footprint · 81 cultivation systems</span><span class="zh">占地 · 81套培育系统</span></div></div>
+      <div class="eco"><div class="v">2–3 <span style="font-size:12px"><span class="en">yrs</span><span class="zh">年</span></span></div><div class="l"><span class="en">Payback on a single module</span><span class="zh">单模块投资回收期</span></div></div>
+      <div class="eco"><div class="v">90%+</div><div class="l"><span class="en">Water saving vs soil nursery</span><span class="zh">较土壤苗圃节水</span></div></div>
+      <div class="eco"><div class="v">0</div><div class="l"><span class="en">Pesticide · soil-borne disease vectors</span><span class="zh">农药 · 土传病害媒介</span></div></div>
+    </div>
+    <p class="note"><span class="en">Cost lines are derived from the AIRCAFE operating model and are illustrative of the current pilot configuration, not audited figures. Energy and labour lines are the two we expect the patent's control logic to compress most as the module replicates.</span><span class="zh">成本项来自 AIRCAFE 运营模型，反映当前中试配置，非审计数据。随模块复制，能耗与人工是专利控制逻辑预期压缩最多的两项。</span></p>
+  </section>
+<section>
+    <div class="sechead"><span class="secno">04</span><h2 class="sec"><span class="en">What the Next 18 Months Buy</span><span class="zh">未来18个月买到什么</span></h2></div>
+    <div class="flow">
+      <div class="fnode"><b><span class="en">M1–M3 · Lock the process</span><span class="zh">M1–M3 · 工艺固化</span></b><span class="en">Recipe locked, batch-consistency baseline, cost per seedling driven to ≤¥6.30</span><span class="zh">配方锁定、批次一致性基线、单株成本降至 ≤¥6.30</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b><span class="en">M4–M9 · First commercial module</span><span class="zh">M4–M9 · 首个商业级模块</span></b><span class="en">One standard module commissioned, third-party cupping panel engaged</span><span class="zh">一个标准模块投产、引入第三方杯测</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b><span class="en">M10–M12 · Proven output</span><span class="zh">M10–M12 · 产出验证</span></b><span class="en">First commercial batch sold, water &amp; carbon baseline published</span><span class="zh">首批商业出货、水足迹与碳基线发布</span></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><b><span class="en">M13–M18 · Replication proof</span><span class="zh">M13–M18 · 可复制性验证</span></b><span class="en">6-module cluster, unit economics replicated, Series A ready</span><span class="zh">6模块集群、单位经济复制验证、具备A轮条件</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><span class="secno">05</span><h2 class="sec"><span class="en">Navigate the Invitation</span><span class="zh">邀请函导航</span></h2></div>
+    <p class="sub en">Each heading below is its own page — sixteen in total. Nothing important is buried under a scroll position.</p>
+    <p class="sub zh">下面每个标题都是独立页面——共十六页。没有重要内容被埋在某个滚动位置下面。</p>
+    <div class="grid tldr">
+      <a class="card" href="technology.html" style="text-decoration:none;">
+        <h3 class="blue"><span class="en">01 · Technology &amp; Patent Moat →</span><span class="zh">01 · 技术与专利护城河 →</span></h3>
+        <p class="en">Patent file, five-node architecture, three-approach comparison, and the technical risks stated plainly.</p>
+        <p class="zh">专利档案、五节点架构、三条技术路线对比，以及直说的技术风险。</p></a>
+      <a class="card" href="traction.html" style="text-decoration:none;">
+        <h3 class="blue"><span class="en">02 · Seedling-Stage Traction →</span><span class="zh">02 · 幼苗期进展 →</span></h3>
+        <p class="en">What is validated, what is not, the two key curves, and the 18-month milestone ladder that gates the tranches.</p>
+        <p class="zh">已验证什么、尚未完成什么、两条关键曲线，以及控制资金释放的 18 个月里程碑阶梯。</p></a>
+      <a class="card" href="market.html" style="text-decoration:none;">
+        <h3 class="blue"><span class="en">03 · Market &amp; Climate Thesis →</span><span class="zh">03 · 市场与气候逻辑 →</span></h3>
+        <p class="en">ICO's 2050 land-contraction scenario, the demand funnel, who actually pays, and the competitive map.</p>
+        <p class="zh">ICO 2050 土地缩减情景、需求漏斗、谁真正付钱、竞争地图。</p></a>
+      <a class="card" href="team.html" style="text-decoration:none;">
+        <h3 class="blue"><span class="en">04 · Founding Team →</span><span class="zh">04 · 创始团队 →</span></h3>
+        <p class="en">The one founder, the two open senior seats, the dated record of results, and the team risks in the open.</p>
+        <p class="zh">唯一创始人、两个待补高级岗、有日期的成果记录，以及摊开来讲的团队风险。</p></a>
+      <a class="card" href="proposal.html" style="text-decoration:none;">
+        <h3 class="blue"><span class="en">05 · The Proposition →</span><span class="zh">05 · 方案总览 →</span></h3>
+        <p class="en">Why AIRCAFE and the trial-field argument, term sheet, use of funds, return scenarios, risk and governance, next steps.</p>
+        <p class="zh">为何是AIRCAFE与试验田论证、条款清单、资金用途、回报情景、风险与治理、下一步。</p></a>
+      <a class="card" href="rationale.html" style="text-decoration:none;">
+        <h3 class="blue"><span class="en">06 · The US$300,000 Trial Field →</span><span class="zh">06 · US$300,000 试验田 →</span></h3>
+        <p class="en">The portfolio-synergy case: your coffee portfolio already contains a verified demand signal, and US$300,000 buys a working plant on it — carried from seedling all the way to fruit.</p>
+        <p class="zh">组合协同论证：你们的咖啡投资组合里已有一个经过验证的需求信号，30 万美金是在那条曲线上买下一株真正跑完全程的植株——从幼苗一直带到挂果。</p></a>
+    </div>
+  </section>
+
+<div class="pager"><span style="flex:1 1 240px"></span><a class="nx" href="technology.html"><div class="pk"><span class="en">Next →</span><span class="zh">下一页 →</span></div><div class="pt"><span class="en">Patent & Novelty</span><span class="zh">专利与新颖性</span></div></a></div>
+</div>
+
+<div class="wrap"><div class="discl">
+  <b class="en">Honest boundaries of this material</b><b class="zh">本材料的诚实边界</b>
+  <span class="en">: We are pre-production. We have no mass production, no scaled revenue, no audited financials and no purchase orders. The patent has passed preliminary examination but is <b>not yet granted</b>. Round terms, milestones and return scenarios are proposals and analytical estimates, not commitments. Everything in this document is provided so that AIRCAFE can form a view on the technology before the price of entry changes — not to overstate our current position.</span>
+  <span class="zh">：我们尚未量产。没有规模化收入、没有审计财务、没有采购订单。专利已通过初步审查但<b>尚未获得授权</b>。融资条款、里程碑与回报情景均为提案与分析性测算，不构成承诺。本文件的目的，是让AIRCAFE在进入成本改变之前就对这项技术形成判断——而非夸大我们当下的位置。</span>
+</div></div>
+<footer><div class="wrap">
+  <span class="en">Published by the AIRCAFE project team. Technical and operating information only — not an offer of securities. Sources: AIRCAFE aeroponic coffee cultivation system operating model and cost accounting; Chinese invention patent application P2026061510002 (acceptance notice 2026-07-23, preliminary examination passed 2026-09-09); ICO coffee climate research. FX reference US$1 ≈ ¥7.1. 2026-10-07.</span>
+  <span class="zh">由 AIRCAFE 项目团队发布。仅为技术与运营信息，不构成任何证券要约。数据来源：AIRCAFE 雾化水培咖啡种植系统运营模型与成本核算；中国发明专利申请 P2026061510002（受理通知书 2026-07-23，初步审查合格 2026-09-09）；ICO 咖啡气候研究。汇率参考 US$1 ≈ ¥7.1。2026-10-07。</span>
+</div></footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/chrome.js"></script>
+<script>
+function L(en, zh) { return (window.NAP_LANG && window.NAP_LANG() === "zh") ? zh : en; }
+
+function renderValue() {
+  var el = document.getElementById("chartValue");
+  if (!el) return;
+  echarts.dispose(el);
+  echarts.init(el).setOption({
+    backgroundColor: "transparent",
+    textStyle: { color: "#c9cdd1" },
+    tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, valueFormatter: function (v) { return "¥" + v; } },
+    legend: { top: 0, textStyle: { color: "#71767b" } },
+    grid: { left: 60, right: 70, top: 40, bottom: 34 },
+    xAxis: { type: "value", max: 25, axisLabel: { color: "#71767b", formatter: "¥{value}" },
+             splitLine: { lineStyle: { color: "#1c2530" } } },
+    yAxis: { type: "category", data: [L("Per seedling", "单株")], axisLabel: { color: "#c9cdd1" },
+             axisLine: { lineStyle: { color: "#2a3543" } } },
+    series: [
+      { name: L("Cost", "成本"), type: "bar", stack: "s", barMaxWidth: 56, data: [6.61],
+        itemStyle: { color: "#f4212e" },
+        label: { show: true, position: "inside", color: "#fff", fontWeight: "bold", formatter: "¥{c}" } },
+      { name: L("Gross profit", "毛利"), type: "bar", stack: "s", barMaxWidth: 56, data: [18.39],
+        itemStyle: { color: "#00ba7c", borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: "inside", color: "#04140d", fontWeight: "bold", formatter: "¥{c}" } }
+    ],
+    graphic: [{ type: "text", right: 4, top: 2,
+      style: { text: L("73.5% margin", "毛利率 73.5%"), fill: "#00ba7c", fontSize: 13, fontWeight: "bold" } }]
+  });
+}
+
+function renderCost() {
+  var el = document.getElementById("chartCost");
+  if (!el) return;
+  echarts.dispose(el);
+  var data = [
+    { value: 1.85, name: L("Energy (LED + mist pumps)", "能耗（LED + 雾化泵）"), itemStyle: { color: "#f4212e" } },
+    { value: 1.60, name: L("Labour", "人工"), itemStyle: { color: "#d4a94e" } },
+    { value: 1.30, name: L("Nutrient solution", "营养液"), itemStyle: { color: "#1d9bf0" } },
+    { value: 1.30, name: L("Equipment depreciation", "设备折旧"), itemStyle: { color: "#787cf0" } },
+    { value: 0.56, name: L("Germplasm & consumables", "种质与耗材"), itemStyle: { color: "#00ba7c" } }
+  ];
+  echarts.init(el).setOption({
+    backgroundColor: "transparent",
+    textStyle: { color: "#c9cdd1" },
+    tooltip: { trigger: "item", valueFormatter: function (v) { return "¥" + v + " / " + L("seedling", "株"); } },
+    legend: { top: 0, type: "scroll", textStyle: { color: "#71767b", fontSize: 11 }, itemWidth: 12, itemHeight: 9 },
+    series: [{
+      type: "pie", radius: ["48%", "72%"], center: ["50%", "62%"], data: data,
+      label: { color: "#e7e9ea", fontSize: 11, formatter: "{b}\n¥{c}" },
+      labelLine: { lineStyle: { color: "#2a3543" } },
+      itemStyle: { borderColor: "#0a0d10", borderWidth: 2 }
+    }],
+    graphic: [{ type: "text", left: "center", top: "56%",
+      style: { text: L("¥6.61", "¥6.61"), fill: "#e7e9ea", fontSize: 18, fontWeight: "bold", align: "center" } }]
+  });
+}
+
+function renderAll() { renderValue(); renderCost(); }
+document.addEventListener("DOMContentLoaded", renderAll);
+window.addEventListener("langchange", function () { setTimeout(renderAll, 0); });
+</script>
+</body>
+</html>
