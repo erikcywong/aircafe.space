@@ -20,6 +20,8 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 #intro .in-line.l1,#intro .in-line.l2{font-size:clamp(26px,4.6vw,46px);font-weight:800;letter-spacing:-.5px;color:#e7e9ea;}
 #intro .in-line.l1 b,#intro .in-line.l2 b{color:#1d9bf0;}
 #intro .in-line.l1 .amp,#intro .in-line.l2 .amp{color:#1d9bf0;font-weight:800;}
+#intro .in-line.l4{font-size:clamp(26px,4.6vw,46px);font-weight:800;letter-spacing:-.5px;color:#e7e9ea;}
+#intro .in-line.l4 b{color:#1d9bf0;}
 #intro .in-line.l3 .b{font-size:clamp(34px,5.4vw,56px);font-weight:900;letter-spacing:.02em;color:#e7e9ea;}
 #intro .in-line.l3 .b b{color:#1d9bf0;}
 #intro .in-line.l3 .sub{font-size:clamp(13px,1.5vw,16px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#71767b;}
@@ -28,6 +30,7 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 #intro.play .l1{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) .25s both;}
 #intro.play .l2{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) 2.15s both;}
 #intro.play .l3{animation:inPop 2.0s cubic-bezier(.22,.8,.3,1) 4.05s both;}
+#intro.play .l4{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) 5.95s both;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -40,6 +43,7 @@ body.intro-lock{overflow:hidden;}
     <p class="in-line l1"><span class="en">Engineered <span class="amp">&amp;</span> Repeatable</span><span class="zh">工程化 · 可复现</span></p>
     <p class="in-line l2"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
     <p class="in-line l3"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">The World's First Gas-Liquid Aeroponic Coffee System</span><span class="zh">全球首个气液式雾化咖啡种植系统</span></span></p>
+    <p class="in-line l4"><span class="en">Is What You Need — <b>Beans Coffee!</b></span><span class="zh">你所需要的——正是咖啡豆！</span></p>
   </div>
   <span class="in-skip" id="inSkip"><span class="en">Skip</span><span class="zh">跳过</span></span>
 </div>
@@ -330,7 +334,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
     setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 750);
   }
   requestAnimationFrame(function () { requestAnimationFrame(function () { intro.classList.add("play"); }); });
-  setTimeout(finish, 6300);
+  setTimeout(finish, 8200);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 })();
