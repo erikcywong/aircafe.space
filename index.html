@@ -9,7 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000000'/%3E%3Ctext x='16' y='23' font-size='19' font-family='Arial' font-weight='bold' fill='%231d9bf0' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/style.css?v=20261008">
 <style>
-/* ===== intro splash overlay (3 slogans, sequential) ===== */
+/* ===== intro splash overlay (7 slogans, sequential) ===== */
 #intro{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease;}
 #intro.out{opacity:0;pointer-events:none;}
 #intro .in-wrap{position:relative;width:min(1300px,92vw);height:360px;}
@@ -17,14 +17,14 @@
 #intro .in-line .zh{display:none;}
 html[data-lang="zh"] #intro .in-line .en{display:none;}
 html[data-lang="zh"] #intro .in-line .zh{display:block;}
-#intro .in-line.l1,#intro .in-line.l2,#intro .in-line.l3{font-size:clamp(36px,4.6vw,54px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1d9bf0;line-height:1.7;}
-#intro .in-line.l1 .amp,#intro .in-line.l2 .amp{color:#e7e9ea;}
-#intro .in-line.l3 b{color:#e7e9ea;}
-#intro .in-line.l4{font-size:clamp(28px,3.2vw,38px);font-weight:600;line-height:1.75;letter-spacing:.08em;color:#71767b;padding:0 4%;}
-#intro .in-line.l4 b{color:#1d9bf0;font-weight:800;}
-#intro .in-line.l5 .b{font-size:clamp(52px,7.2vw,84px);font-weight:700;letter-spacing:.16em;color:#e7e9ea;}
-#intro .in-line.l5 .b b{color:#1d9bf0;}
-#intro .in-line.l5 .sub{margin-top:10px;font-size:clamp(22px,2.4vw,26px);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#71767b;}
+#intro .in-line.t1{font-size:clamp(36px,4.6vw,54px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#1d9bf0;line-height:1.7;}
+#intro .in-line.t1 .amp{color:#e7e9ea;}
+#intro .in-line.t1 b{color:#e7e9ea;}
+#intro .in-line.t4{font-size:clamp(28px,3.2vw,38px);font-weight:600;line-height:1.75;letter-spacing:.08em;color:#71767b;padding:0 4%;}
+#intro .in-line.t4 b{color:#1d9bf0;font-weight:800;}
+#intro .in-line.t5 .b{font-size:clamp(52px,7.2vw,84px);font-weight:700;letter-spacing:.16em;color:#e7e9ea;}
+#intro .in-line.t5 .b b{color:#1d9bf0;}
+#intro .in-line.t5 .sub{margin-top:10px;font-size:clamp(22px,2.4vw,26px);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#71767b;}
 #intro .in-rule{position:absolute;left:50%;top:50%;margin-top:104px;transform:translateX(-50%);width:64px;height:2px;background:#1d9bf0;opacity:.85;}
 #intro .in-skip{position:absolute;right:22px;bottom:18px;font-size:10.5px;letter-spacing:.28em;color:#3a3f44;text-transform:uppercase;cursor:pointer;}
 /* countdown timer — ring + seconds left on the current slogan */
@@ -41,10 +41,10 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 /* small screens: doubled sizes would overflow, so scale back to ~single-size */
 @media (max-width:760px){
   #intro .in-wrap{width:92vw;height:320px;}
-  #intro .in-line.l1,#intro .in-line.l2,#intro .in-line.l3{font-size:22px;letter-spacing:.14em;}
-  #intro .in-line.l4{font-size:16px;letter-spacing:.05em;}
-  #intro .in-line.l5 .b{font-size:34px;letter-spacing:.12em;}
-  #intro .in-line.l5 .sub{font-size:12px;letter-spacing:.2em;}
+  #intro .in-line.t1{font-size:22px;letter-spacing:.14em;}
+  #intro .in-line.t4{font-size:16px;letter-spacing:.05em;}
+  #intro .in-line.t5 .b{font-size:34px;letter-spacing:.12em;}
+  #intro .in-line.t5 .sub{font-size:12px;letter-spacing:.2em;}
   #intro .in-rule{margin-top:76px;}
   #intro .in-count{bottom:34px;gap:7px;}
   #intro .in-ring,#intro .in-ring svg{width:64px;height:64px;}
@@ -54,13 +54,16 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 @keyframes inIn{from{opacity:0;transform:translateY(14px);filter:blur(6px);}to{opacity:1;transform:none;filter:blur(0);}}
 @keyframes inOut{from{opacity:1;transform:none;}to{opacity:0;transform:translateY(-10px);}}
 /* each slogan = fade-in then fade-out; the gap between the two delays IS the
-   hold time. ① ② ③ ⑤ hold 1.98s · ④ holds 3.98s (its line is much longer).
-   countdown seconds shown = ceil(hold) → 2-1 / 2-1 / 2-1 / 4-3-2-1 / 2-1 */
-#intro.play .l1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 2.13s forwards;}
-#intro.play .l2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 2.33s both,inOut .45s cubic-bezier(.22,.8,.3,1) 4.31s forwards;}
-#intro.play .l3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 4.51s both,inOut .45s cubic-bezier(.22,.8,.3,1) 6.49s forwards;}
-#intro.play .l4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 6.69s both,inOut .45s cubic-bezier(.22,.8,.3,1) 10.67s forwards;}
-#intro.play .l5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 10.87s both,inOut .45s cubic-bezier(.22,.8,.3,1) 12.85s forwards;}
+   hold time.  ① ③ ④ ⑤ ⑦ hold 1.98s · ② ⑥ hold 3.98s (their lines are much
+   longer).  countdown seconds shown = ceil(hold):
+   ① 2-1 · ② 4-3-2-1 · ③ 2-1 · ④ 2-1 · ⑤ 2-1 · ⑥ 4-3-2-1 · ⑦ 2-1 */
+#intro.play .s1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 2.13s forwards;}
+#intro.play .s2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 2.33s both,inOut .45s cubic-bezier(.22,.8,.3,1) 6.31s forwards;}
+#intro.play .s3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 6.51s both,inOut .45s cubic-bezier(.22,.8,.3,1) 8.49s forwards;}
+#intro.play .s4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 8.69s both,inOut .45s cubic-bezier(.22,.8,.3,1) 10.67s forwards;}
+#intro.play .s5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 10.87s both,inOut .45s cubic-bezier(.22,.8,.3,1) 12.85s forwards;}
+#intro.play .s6{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 13.05s both,inOut .45s cubic-bezier(.22,.8,.3,1) 17.03s forwards;}
+#intro.play .s7{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 17.23s both,inOut .45s cubic-bezier(.22,.8,.3,1) 19.21s forwards;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -70,11 +73,13 @@ body.intro-lock{overflow:hidden;}
 <!-- intro splash -->
 <div id="intro">
   <div class="in-wrap">
-    <p class="in-line l1"><span class="en">Engineered Coffee Infrastructure</span><span class="zh">可工程化的咖啡新基建</span></p>
-    <p class="in-line l2"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
-    <p class="in-line l3"><span class="en">Never Worry About <b>Beans</b> Again</span><span class="zh">不再为<b>豆子</b>发愁</span></p>
-    <p class="in-line l4"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
-    <p class="in-line l5"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Bestar Coffee needs</span><span class="zh">这正是「比星咖啡」需要的</span></span></p>
+    <p class="in-line t1 s1"><span class="en">Premium <span class="amp">·</span> Low Cost <span class="amp">·</span> Infinite Scale — Only One of the Three?</span><span class="zh">精品、低价、无限扩张，只能三选一？</span></p>
+    <p class="in-line t4 s2"><span class="en">We break the supply chain's <b>impossible triangle</b> — engineered cultivation that reliably backstops <b>every franchise store</b>.</span><span class="zh">打破供应链的<b>「不可能三角」</b>，<br>我们用<b>可工程化的种植技术</b>，为每一家加盟店稳稳托底。</span></p>
+    <p class="in-line t1 s3"><span class="en">Engineered Coffee Infrastructure</span><span class="zh">可工程化的咖啡新基建</span></p>
+    <p class="in-line t1 s4"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
+    <p class="in-line t1 s5"><span class="en">Never Worry About <b>Beans</b> Again</span><span class="zh">不再为<b>豆子</b>发愁</span></p>
+    <p class="in-line t4 s6"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
+    <p class="in-line t5 s7"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Bestar Coffee needs</span><span class="zh">这正是「比星咖啡」需要的</span></span></p>
   </div>
   <span class="in-rule"></span>
   <div class="in-count" id="inCount" aria-hidden="true">
@@ -83,9 +88,9 @@ body.intro-lock{overflow:hidden;}
         <circle class="trk" cx="42" cy="42" r="37"></circle>
         <circle class="bar" id="inBar" cx="42" cy="42" r="37"></circle>
       </svg>
-      <span class="in-num" id="inNum">3</span>
+      <span class="in-num" id="inNum">2</span>
     </div>
-    <span class="in-step" id="inStep">1 / 5</span>
+    <span class="in-step" id="inStep">1 / 7</span>
   </div>
   <span class="in-skip" id="inSkip"><span class="en">Skip</span><span class="zh">跳过</span></span>
 </div>
@@ -387,7 +392,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
       startCountdown();
     });
   });
-  setTimeout(finish, 13500);
+  setTimeout(finish, 19860);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 
