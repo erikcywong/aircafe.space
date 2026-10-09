@@ -17,21 +17,22 @@
 #intro .in-line .zh{display:none;}
 html[data-lang="zh"] #intro .in-line .en{display:none;}
 html[data-lang="zh"] #intro .in-line .zh{display:block;}
-#intro .in-line.l1,#intro .in-line.l2,#intro .in-line.l3{font-size:clamp(25px,4.4vw,44px);font-weight:800;letter-spacing:-.5px;color:#e7e9ea;}
-#intro .in-line.l1 .amp,#intro .in-line.l2 .amp{color:#1d9bf0;font-weight:800;}
-#intro .in-line.l3 b{color:#1d9bf0;}
-#intro .in-line.l4{font-size:clamp(17px,2.2vw,25px);font-weight:600;line-height:1.55;letter-spacing:0;color:#9aa0a6;padding:0 5%;}
+#intro .in-line.l1,#intro .in-line.l2,#intro .in-line.l3{font-size:clamp(14px,1.7vw,20px);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1d9bf0;line-height:1.7;}
+#intro .in-line.l1 .amp,#intro .in-line.l2 .amp{color:#e7e9ea;}
+#intro .in-line.l3 b{color:#e7e9ea;}
+#intro .in-line.l4{font-size:clamp(13px,1.4vw,16px);font-weight:600;line-height:1.75;letter-spacing:.08em;color:#71767b;padding:0 4%;}
 #intro .in-line.l4 b{color:#1d9bf0;font-weight:800;}
-#intro .in-line.l5 .b{font-size:clamp(34px,5.4vw,56px);font-weight:900;letter-spacing:.02em;color:#e7e9ea;}
+#intro .in-line.l5 .b{font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:.16em;color:#e7e9ea;}
 #intro .in-line.l5 .b b{color:#1d9bf0;}
-#intro .in-line.l5 .sub{font-size:clamp(13px,1.5vw,16px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#71767b;}
-#intro .in-skip{position:absolute;right:22px;bottom:18px;font-size:11px;letter-spacing:.22em;color:#3a3f44;text-transform:uppercase;cursor:pointer;}
-@keyframes inPop{0%{opacity:0;transform:translateY(22px) scale(.965);filter:blur(8px);}14%{opacity:1;transform:none;filter:blur(0);}82%{opacity:1;transform:none;}100%{opacity:0;transform:translateY(-14px);}}
-#intro.play .l1{animation:inPop 1.75s cubic-bezier(.22,.8,.3,1) .25s both;}
-#intro.play .l2{animation:inPop 1.75s cubic-bezier(.22,.8,.3,1) 1.95s both;}
-#intro.play .l3{animation:inPop 1.75s cubic-bezier(.22,.8,.3,1) 3.65s both;}
-#intro.play .l4{animation:inPop 1.85s cubic-bezier(.22,.8,.3,1) 5.35s both;}
-#intro.play .l5{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) 7.05s both;}
+#intro .in-line.l5 .sub{margin-top:8px;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#71767b;}
+#intro .in-rule{position:absolute;left:50%;top:50%;margin-top:62px;transform:translateX(-50%);width:64px;height:2px;background:#1d9bf0;opacity:.85;}
+#intro .in-skip{position:absolute;right:22px;bottom:18px;font-size:10.5px;letter-spacing:.28em;color:#3a3f44;text-transform:uppercase;cursor:pointer;}
+@keyframes inPop{0%{opacity:0;transform:translateY(14px);filter:blur(6px);}7%{opacity:1;transform:none;filter:blur(0);}93%{opacity:1;transform:none;}100%{opacity:0;transform:translateY(-10px);}}
+#intro.play .l1{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) .2s both;}
+#intro.play .l2{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 3.7s both;}
+#intro.play .l3{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 7.2s both;}
+#intro.play .l4{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 10.7s both;}
+#intro.play .l5{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 14.2s both;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -47,6 +48,7 @@ body.intro-lock{overflow:hidden;}
     <p class="in-line l4"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
     <p class="in-line l5"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Beans Coffee needs</span><span class="zh">这正是「比时咖啡」需要的</span></span></p>
   </div>
+  <span class="in-rule"></span>
   <span class="in-skip" id="inSkip"><span class="en">Skip</span><span class="zh">跳过</span></span>
 </div>
 
@@ -336,7 +338,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
     setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 750);
   }
   requestAnimationFrame(function () { requestAnimationFrame(function () { intro.classList.add("play"); }); });
-  setTimeout(finish, 9200);
+  setTimeout(finish, 17900);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 })();
