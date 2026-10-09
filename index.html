@@ -17,20 +17,21 @@
 #intro .in-line .zh{display:none;}
 html[data-lang="zh"] #intro .in-line .en{display:none;}
 html[data-lang="zh"] #intro .in-line .zh{display:block;}
-#intro .in-line.l1,#intro .in-line.l2{font-size:clamp(26px,4.6vw,46px);font-weight:800;letter-spacing:-.5px;color:#e7e9ea;}
-#intro .in-line.l1 b,#intro .in-line.l2 b{color:#1d9bf0;}
+#intro .in-line.l1,#intro .in-line.l2,#intro .in-line.l3{font-size:clamp(25px,4.4vw,44px);font-weight:800;letter-spacing:-.5px;color:#e7e9ea;}
 #intro .in-line.l1 .amp,#intro .in-line.l2 .amp{color:#1d9bf0;font-weight:800;}
-#intro .in-line.l4{font-size:clamp(26px,4.6vw,46px);font-weight:800;letter-spacing:-.5px;color:#e7e9ea;}
-#intro .in-line.l4 b{color:#1d9bf0;}
-#intro .in-line.l3 .b{font-size:clamp(34px,5.4vw,56px);font-weight:900;letter-spacing:.02em;color:#e7e9ea;}
-#intro .in-line.l3 .b b{color:#1d9bf0;}
-#intro .in-line.l3 .sub{font-size:clamp(13px,1.5vw,16px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#71767b;}
+#intro .in-line.l3 b{color:#1d9bf0;}
+#intro .in-line.l4{font-size:clamp(17px,2.2vw,25px);font-weight:600;line-height:1.55;letter-spacing:0;color:#9aa0a6;padding:0 5%;}
+#intro .in-line.l4 b{color:#1d9bf0;font-weight:800;}
+#intro .in-line.l5 .b{font-size:clamp(34px,5.4vw,56px);font-weight:900;letter-spacing:.02em;color:#e7e9ea;}
+#intro .in-line.l5 .b b{color:#1d9bf0;}
+#intro .in-line.l5 .sub{font-size:clamp(13px,1.5vw,16px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#71767b;}
 #intro .in-skip{position:absolute;right:22px;bottom:18px;font-size:11px;letter-spacing:.22em;color:#3a3f44;text-transform:uppercase;cursor:pointer;}
 @keyframes inPop{0%{opacity:0;transform:translateY(22px) scale(.965);filter:blur(8px);}14%{opacity:1;transform:none;filter:blur(0);}82%{opacity:1;transform:none;}100%{opacity:0;transform:translateY(-14px);}}
-#intro.play .l1{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) .25s both;}
-#intro.play .l2{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) 2.15s both;}
-#intro.play .l3{animation:inPop 2.0s cubic-bezier(.22,.8,.3,1) 4.05s both;}
-#intro.play .l4{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) 5.95s both;}
+#intro.play .l1{animation:inPop 1.75s cubic-bezier(.22,.8,.3,1) .25s both;}
+#intro.play .l2{animation:inPop 1.75s cubic-bezier(.22,.8,.3,1) 1.95s both;}
+#intro.play .l3{animation:inPop 1.75s cubic-bezier(.22,.8,.3,1) 3.65s both;}
+#intro.play .l4{animation:inPop 1.85s cubic-bezier(.22,.8,.3,1) 5.35s both;}
+#intro.play .l5{animation:inPop 1.9s cubic-bezier(.22,.8,.3,1) 7.05s both;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -40,10 +41,11 @@ body.intro-lock{overflow:hidden;}
 <!-- intro splash -->
 <div id="intro">
   <div class="in-wrap">
-    <p class="in-line l1"><span class="en">Engineered <span class="amp">&amp;</span> Repeatable</span><span class="zh">工程化 · 可复现</span></p>
+    <p class="in-line l1"><span class="en">Engineered Coffee Infrastructure</span><span class="zh">可工程化的咖啡新基建</span></p>
     <p class="in-line l2"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
-    <p class="in-line l3"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">The World's First Gas-Liquid Aeroponic Coffee System</span><span class="zh">全球首个气液式雾化咖啡种植系统</span></span></p>
-    <p class="in-line l4"><span class="en">This Is What <b>Beans Coffee</b> Needs!</span><span class="zh">这正是「比时咖啡」需要的</span></p>
+    <p class="in-line l3"><span class="en">Never Worry About <b>Beans</b> Again</span><span class="zh">不再为<b>豆子</b>发愁</span></p>
+    <p class="in-line l4"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
+    <p class="in-line l5"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Beans Coffee needs</span><span class="zh">这正是「比时咖啡」需要的</span></span></p>
   </div>
   <span class="in-skip" id="inSkip"><span class="en">Skip</span><span class="zh">跳过</span></span>
 </div>
@@ -106,12 +108,12 @@ body.intro-lock{overflow:hidden;}
     <span class="tag"><span class="en">Aeroponic Coffee · Seedling to Fruit</span><span class="zh">雾化咖啡 · 从幼苗到挂果</span></span>
     <span class="tag green"><span class="en">Invention Patent P2026061510002 · Preliminary Examination Passed</span><span class="zh">发明专利 P2026061510002 · 初审合格</span></span>
   </div>
-    <p class="splash"><span class="en">Engineered &amp; Repeatable</span><span class="zh">工程化 · 可复现</span></p>
+    <p class="splash"><span class="en">Engineered Coffee Infrastructure</span><span class="zh">可工程化的咖啡新基建</span></p>
 <h1 class="en">The World's First <em>Gas-Liquid Aeroponic</em> Full-Cycle Coffee Cultivation System</h1>
   <h1 class="zh">全球首个 <em>气液式雾化</em> 咖啡全周期种植系统</h1>
   <p class="lede en">AIRCAFE has validated the core process of aeroponic coffee seedling production: a <b>4-month growth cycle</b>, <b>3 batches per year</b>, <b>¥6.61 cost per seedling</b> against a <b>¥25 selling price</b> — a <b>73.5% unit gross margin</b>. The underlying method is filed as an invention patent and passed preliminary examination on 9 September 2026. We are still at seedling stage: no mass production, no scaled revenue, no purchase commitments. That is precisely why entry cost today is the lowest it will ever be.</p>
   <p class="lede zh">AIRCAFE已完成雾化水培咖啡幼苗的核心工艺验证：<b>4个月生长周期</b>、<b>年产3批</b>、<b>单株成本 ¥6.61</b>、<b>单株售价 ¥25</b>，单位<b>毛利率 73.5%</b>。其核心方法已申请发明专利，并于 2026 年 9 月 9 日通过初步审查。我们仍处幼苗期：未量产、无规模化收入、无采购订单承诺。正因如此，今天的进入成本将是历史最低点。</p>
-  <p class="splash after"><span class="en">Specialty-Grade &amp; Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
+  <p class="splash after"><span class="en">Never worry about beans again — predictable, repeatable full-cycle management that breaks the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">不再为豆子发愁 —— 以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
   <div class="rule"></div>
 </div>
 
@@ -334,7 +336,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
     setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 750);
   }
   requestAnimationFrame(function () { requestAnimationFrame(function () { intro.classList.add("play"); }); });
-  setTimeout(finish, 8200);
+  setTimeout(finish, 9200);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 })();
