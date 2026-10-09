@@ -341,3 +341,27 @@ html[data-lang="zh"] .en{display:none;}
   .person .ava{margin:0 0 15px;}
   .person .tags{justify-content:flex-start;}
 }
+
+/* ---------- BeanStar supply diagnosis (§7) ---------- */
+.tag.dim{color:var(--muted);border-color:var(--border2);}
+.card.bs-red{border-color:rgba(244,33,46,.35);background:linear-gradient(180deg,rgba(244,33,46,.07),rgba(244,33,46,.01));}
+.card.bs-red h3{color:var(--red);}
+.card.bs-blue{border-color:rgba(29,155,240,.4);background:linear-gradient(180deg,rgba(29,155,240,.08),rgba(29,155,240,.01));}
+.card.bs-amber{border-color:rgba(255,212,0,.32);background:linear-gradient(180deg,rgba(255,212,0,.06),transparent);}
+.card.bs-amber h3{color:var(--amber);}
+.card.bs-green{border-color:rgba(0,186,124,.35);background:linear-gradient(180deg,rgba(0,186,124,.06),transparent);}
+.card.bs-green h3{color:var(--green);}
+.kpi .v.up{color:var(--red);} .kpi .v.dn{color:var(--green);}
+.bsfig{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:22px 0;overflow-x:auto;}
+.bsfig svg{display:block;width:100%;height:auto;min-width:540px;}
+.bsfig figcaption{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7;}
+.bsfig figcaption b{color:var(--body);}
+.bslist{margin:8px 0 16px;padding:0;list-style:none;}
+.bslist li{position:relative;padding-left:16px;margin-bottom:8px;font-size:13px;color:var(--body);line-height:1.7;}
+.bslist li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--border2);}
+.bslist.warn li::before{background:var(--red);}
+.bslist.ok li::before{background:var(--green);}
+.bslist li b{color:var(--text);}
+.tbl.bs-tbl th,.tbl.bs-tbl td{text-align:left;vertical-align:top;line-height:1.65;}
+.tbl.bs-tbl td b{color:var(--text);}
+html[data-lang="zh"] figure.zh{display:block;}
