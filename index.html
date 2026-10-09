@@ -9,7 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000000'/%3E%3Ctext x='16' y='23' font-size='19' font-family='Arial' font-weight='bold' fill='%231d9bf0' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/style.css?v=20261008">
 <style>
-/* ===== intro splash overlay (7 slogans, sequential) ===== */
+/* ===== intro splash overlay (6 slogans, sequential) ===== */
 #intro{position:fixed;inset:0;z-index:9999;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease;}
 #intro.out{opacity:0;pointer-events:none;}
 #intro .in-wrap{position:relative;width:min(1300px,92vw);height:360px;}
@@ -54,16 +54,15 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 @keyframes inIn{from{opacity:0;transform:translateY(14px);filter:blur(6px);}to{opacity:1;transform:none;filter:blur(0);}}
 @keyframes inOut{from{opacity:1;transform:none;}to{opacity:0;transform:translateY(-10px);}}
 /* each slogan = fade-in then fade-out; the gap between the two delays IS the
-   hold time.  ① ③ ④ ⑤ ⑦ hold 1.98s · ② ⑥ hold 3.98s (their lines are much
-   longer).  countdown seconds shown = ceil(hold):
-   ① 2-1 · ② 4-3-2-1 · ③ 2-1 · ④ 2-1 · ⑤ 2-1 · ⑥ 4-3-2-1 · ⑦ 2-1 */
-#intro.play .s1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 2.13s forwards;}
-#intro.play .s2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 2.33s both,inOut .45s cubic-bezier(.22,.8,.3,1) 6.31s forwards;}
-#intro.play .s3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 6.51s both,inOut .45s cubic-bezier(.22,.8,.3,1) 8.49s forwards;}
-#intro.play .s4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 8.69s both,inOut .45s cubic-bezier(.22,.8,.3,1) 10.67s forwards;}
-#intro.play .s5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 10.87s both,inOut .45s cubic-bezier(.22,.8,.3,1) 12.85s forwards;}
-#intro.play .s6{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 13.05s both,inOut .45s cubic-bezier(.22,.8,.3,1) 17.03s forwards;}
-#intro.play .s7{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 17.23s both,inOut .45s cubic-bezier(.22,.8,.3,1) 19.21s forwards;}
+   hold time.  ① 4s · ② 5s · ③ ④ ⑥ 1.98s · ⑤ 3.98s (long mechanism line).
+   countdown seconds shown = ceil(hold):
+   ① 4-3-2-1 · ② 5-4-3-2-1 · ③ 2-1 · ④ 2-1 · ⑤ 4-3-2-1 · ⑥ 2-1 */
+#intro.play .s1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 4.15s forwards;}
+#intro.play .s2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 4.35s both,inOut .45s cubic-bezier(.22,.8,.3,1) 9.35s forwards;}
+#intro.play .s3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 9.55s both,inOut .45s cubic-bezier(.22,.8,.3,1) 11.53s forwards;}
+#intro.play .s4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 11.73s both,inOut .45s cubic-bezier(.22,.8,.3,1) 13.71s forwards;}
+#intro.play .s5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 13.91s both,inOut .45s cubic-bezier(.22,.8,.3,1) 17.89s forwards;}
+#intro.play .s6{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 18.09s both,inOut .45s cubic-bezier(.22,.8,.3,1) 20.07s forwards;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -75,11 +74,10 @@ body.intro-lock{overflow:hidden;}
   <div class="in-wrap">
     <p class="in-line t1 s1"><span class="en">Premium <span class="amp">·</span> Low Cost <span class="amp">·</span> Infinite Scale — Only One of the Three?</span><span class="zh">精品、低价、无限扩张，只能三选一？</span></p>
     <p class="in-line t4 s2"><span class="en">We break the supply chain's <b>impossible triangle</b> — engineered cultivation that reliably backstops <b>every franchise store</b>.</span><span class="zh">打破供应链的<b>「不可能三角」</b>，<br>我们用<b>可工程化的种植技术</b>，为每一家加盟店稳稳托底。</span></p>
-    <p class="in-line t1 s3"><span class="en">Engineered Coffee Infrastructure</span><span class="zh">可工程化的咖啡新基建</span></p>
-    <p class="in-line t1 s4"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
-    <p class="in-line t1 s5"><span class="en">Never Worry About <b>Beans</b> Again</span><span class="zh">不再为<b>豆子</b>发愁</span></p>
-    <p class="in-line t4 s6"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
-    <p class="in-line t5 s7"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Bestar Coffee needs</span><span class="zh">这正是「比星咖啡」需要的</span></span></p>
+    <p class="in-line t1 s3"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
+    <p class="in-line t1 s4"><span class="en">Never Worry About <b>Beans</b> Again</span><span class="zh">不再为<b>豆子</b>发愁</span></p>
+    <p class="in-line t4 s5"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
+    <p class="in-line t5 s6"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Bestar Coffee needs</span><span class="zh">这正是「比星咖啡」需要的</span></span></p>
   </div>
   <span class="in-rule"></span>
   <div class="in-count" id="inCount" aria-hidden="true">
@@ -88,9 +86,9 @@ body.intro-lock{overflow:hidden;}
         <circle class="trk" cx="42" cy="42" r="37"></circle>
         <circle class="bar" id="inBar" cx="42" cy="42" r="37"></circle>
       </svg>
-      <span class="in-num" id="inNum">2</span>
+      <span class="in-num" id="inNum">4</span>
     </div>
-    <span class="in-step" id="inStep">1 / 7</span>
+    <span class="in-step" id="inStep">1 / 6</span>
   </div>
   <span class="in-skip" id="inSkip"><span class="en">Skip</span><span class="zh">跳过</span></span>
 </div>
@@ -392,7 +390,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
       startCountdown();
     });
   });
-  setTimeout(finish, 19860);
+  setTimeout(finish, 20720);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 
