@@ -54,12 +54,13 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 @keyframes inIn{from{opacity:0;transform:translateY(14px);filter:blur(6px);}to{opacity:1;transform:none;filter:blur(0);}}
 @keyframes inOut{from{opacity:1;transform:none;}to{opacity:0;transform:translateY(-10px);}}
 /* each slogan = fade-in then fade-out; the gap between the two delays IS the
-   hold time. ① ② ③ ⑤ hold 3s · ④ holds 5s (its line is much longer) */
-#intro.play .l1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 3.15s forwards;}
-#intro.play .l2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 3.35s both,inOut .45s cubic-bezier(.22,.8,.3,1) 6.35s forwards;}
-#intro.play .l3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 6.55s both,inOut .45s cubic-bezier(.22,.8,.3,1) 9.55s forwards;}
-#intro.play .l4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 9.75s both,inOut .45s cubic-bezier(.22,.8,.3,1) 14.75s forwards;}
-#intro.play .l5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 14.95s both,inOut .45s cubic-bezier(.22,.8,.3,1) 17.95s forwards;}
+   hold time. ① ② ③ ⑤ hold 1.98s · ④ holds 3.98s (its line is much longer).
+   countdown seconds shown = ceil(hold) → 2-1 / 2-1 / 2-1 / 4-3-2-1 / 2-1 */
+#intro.play .l1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 2.13s forwards;}
+#intro.play .l2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 2.33s both,inOut .45s cubic-bezier(.22,.8,.3,1) 4.31s forwards;}
+#intro.play .l3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 4.51s both,inOut .45s cubic-bezier(.22,.8,.3,1) 6.49s forwards;}
+#intro.play .l4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 6.69s both,inOut .45s cubic-bezier(.22,.8,.3,1) 10.67s forwards;}
+#intro.play .l5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 10.87s both,inOut .45s cubic-bezier(.22,.8,.3,1) 12.85s forwards;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -386,7 +387,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
       startCountdown();
     });
   });
-  setTimeout(finish, 18600);
+  setTimeout(finish, 13500);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 
