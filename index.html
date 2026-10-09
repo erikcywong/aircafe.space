@@ -22,6 +22,8 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 #intro .in-line.t1 b{color:#e7e9ea;}
 #intro .in-line.t4{font-size:clamp(28px,3.2vw,38px);font-weight:600;line-height:1.75;letter-spacing:.08em;color:#71767b;padding:0 4%;}
 #intro .in-line.t4 b{color:#1d9bf0;font-weight:800;}
+#intro .in-line.t4o{font-size:clamp(20px,2.6vw,36px);font-weight:600;line-height:1.75;letter-spacing:.05em;color:#71767b;padding:0 4%;}
+#intro .in-line.t4o b{color:#1d9bf0;font-weight:800;}
 #intro .in-line.t5 .b{font-size:clamp(52px,7.2vw,84px);font-weight:700;letter-spacing:.16em;color:#e7e9ea;}
 #intro .in-line.t5 .b b{color:#1d9bf0;}
 #intro .in-line.t5 .sub{margin-top:10px;font-size:clamp(22px,2.4vw,26px);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#71767b;}
@@ -43,6 +45,7 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
   #intro .in-wrap{width:92vw;height:320px;}
   #intro .in-line.t1{font-size:22px;letter-spacing:.14em;}
   #intro .in-line.t4{font-size:16px;letter-spacing:.05em;}
+  #intro .in-line.t4o{font-size:16px;letter-spacing:.03em;}
   #intro .in-line.t5 .b{font-size:34px;letter-spacing:.12em;}
   #intro .in-line.t5 .sub{font-size:12px;letter-spacing:.2em;}
   #intro .in-rule{margin-top:76px;}
@@ -54,15 +57,15 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 @keyframes inIn{from{opacity:0;transform:translateY(14px);filter:blur(6px);}to{opacity:1;transform:none;filter:blur(0);}}
 @keyframes inOut{from{opacity:1;transform:none;}to{opacity:0;transform:translateY(-10px);}}
 /* each slogan = fade-in then fade-out; the gap between the two delays IS the
-   hold time.  ① 4s · ② 5s · ③ ④ ⑥ 1.98s · ⑤ 3.98s (long mechanism line).
-   countdown seconds shown = ceil(hold):
-   ① 4-3-2-1 · ② 5-4-3-2-1 · ③ 2-1 · ④ 2-1 · ⑤ 4-3-2-1 · ⑥ 2-1 */
+   hold time.  ① 4s · ② 5s · ③ ④ ⑥ 1.98s · ⑤ 5s (the long mechanism line, set
+   in .t4o so it stays on ONE line).  countdown seconds shown = ceil(hold):
+   ① 4-3-2-1 · ② 5-4-3-2-1 · ③ 2-1 · ④ 2-1 · ⑤ 5-4-3-2-1 · ⑥ 2-1 */
 #intro.play .s1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 4.15s forwards;}
 #intro.play .s2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 4.35s both,inOut .45s cubic-bezier(.22,.8,.3,1) 9.35s forwards;}
 #intro.play .s3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 9.55s both,inOut .45s cubic-bezier(.22,.8,.3,1) 11.53s forwards;}
 #intro.play .s4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 11.73s both,inOut .45s cubic-bezier(.22,.8,.3,1) 13.71s forwards;}
-#intro.play .s5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 13.91s both,inOut .45s cubic-bezier(.22,.8,.3,1) 17.89s forwards;}
-#intro.play .s6{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 18.09s both,inOut .45s cubic-bezier(.22,.8,.3,1) 20.07s forwards;}
+#intro.play .s5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 13.91s both,inOut .45s cubic-bezier(.22,.8,.3,1) 18.91s forwards;}
+#intro.play .s6{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 19.11s both,inOut .45s cubic-bezier(.22,.8,.3,1) 21.09s forwards;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -76,7 +79,7 @@ body.intro-lock{overflow:hidden;}
     <p class="in-line t4 s2"><span class="en">We break the supply chain's <b>impossible triangle</b> — engineered cultivation that reliably backstops <b>every franchise store</b>.</span><span class="zh">打破供应链的<b>「不可能三角」</b>，<br>我们用<b>可工程化的种植技术</b>，为每一家加盟店稳稳托底。</span></p>
     <p class="in-line t1 s3"><span class="en">Specialty-Grade <span class="amp">&amp;</span> Soil-Free</span><span class="zh">精品级 · 无土栽培</span></p>
     <p class="in-line t1 s4"><span class="en">Never Worry About <b>Beans</b> Again</span><span class="zh">不再为<b>豆子</b>发愁</span></p>
-    <p class="in-line t4 s5"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
+    <p class="in-line t4o s5"><span class="en">Predictable, repeatable full-cycle management — breaking the scarcity deadlock of the traditional specialty supply chain.</span><span class="zh">以可预测、可复制的全周期管理，打破传统精品供应链的稀缺死结。</span></p>
     <p class="in-line t5 s6"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Bestar Coffee needs</span><span class="zh">这正是「比星咖啡」需要的</span></span></p>
   </div>
   <span class="in-rule"></span>
@@ -390,7 +393,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
       startCountdown();
     });
   });
-  setTimeout(finish, 20720);
+  setTimeout(finish, 21740);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
 
