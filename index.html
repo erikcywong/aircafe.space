@@ -27,6 +27,17 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
 #intro .in-line.l5 .sub{margin-top:10px;font-size:clamp(22px,2.4vw,26px);font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#71767b;}
 #intro .in-rule{position:absolute;left:50%;top:50%;margin-top:104px;transform:translateX(-50%);width:64px;height:2px;background:#1d9bf0;opacity:.85;}
 #intro .in-skip{position:absolute;right:22px;bottom:18px;font-size:10.5px;letter-spacing:.28em;color:#3a3f44;text-transform:uppercase;cursor:pointer;}
+/* countdown timer — ring + seconds left on the current slogan */
+#intro .in-count{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;opacity:0;transition:opacity .5s ease .3s;}
+#intro.play .in-count{opacity:1;}
+#intro .in-ring{position:relative;width:84px;height:84px;}
+#intro .in-ring svg{display:block;width:84px;height:84px;transform:rotate(-90deg);}
+#intro .in-ring .trk{fill:none;stroke:#232327;stroke-width:3;}
+#intro .in-ring .bar{fill:none;stroke:#1d9bf0;stroke-width:3;stroke-linecap:round;}
+#intro .in-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:800;color:#e7e9ea;font-variant-numeric:tabular-nums;letter-spacing:0;}
+#intro .in-num.tick{animation:numTick .34s ease;}
+@keyframes numTick{0%{opacity:.45;transform:scale(.88);}100%{opacity:1;transform:scale(1);}}
+#intro .in-step{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#71767b;font-variant-numeric:tabular-nums;}
 /* small screens: doubled sizes would overflow, so scale back to ~single-size */
 @media (max-width:760px){
   #intro .in-wrap{width:92vw;height:320px;}
@@ -35,13 +46,20 @@ html[data-lang="zh"] #intro .in-line .zh{display:block;}
   #intro .in-line.l5 .b{font-size:34px;letter-spacing:.12em;}
   #intro .in-line.l5 .sub{font-size:12px;letter-spacing:.2em;}
   #intro .in-rule{margin-top:76px;}
+  #intro .in-count{bottom:34px;gap:7px;}
+  #intro .in-ring,#intro .in-ring svg{width:64px;height:64px;}
+  #intro .in-num{font-size:20px;}
+  #intro .in-step{font-size:9px;letter-spacing:.24em;}
 }
-@keyframes inPop{0%{opacity:0;transform:translateY(14px);filter:blur(6px);}7%{opacity:1;transform:none;filter:blur(0);}93%{opacity:1;transform:none;}100%{opacity:0;transform:translateY(-10px);}}
-#intro.play .l1{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) .2s both;}
-#intro.play .l2{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 3.7s both;}
-#intro.play .l3{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 7.2s both;}
-#intro.play .l4{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 10.7s both;}
-#intro.play .l5{animation:inPop 3.5s cubic-bezier(.22,.8,.3,1) 14.2s both;}
+@keyframes inIn{from{opacity:0;transform:translateY(14px);filter:blur(6px);}to{opacity:1;transform:none;filter:blur(0);}}
+@keyframes inOut{from{opacity:1;transform:none;}to{opacity:0;transform:translateY(-10px);}}
+/* each slogan = fade-in then fade-out; the gap between the two delays IS the
+   hold time. ① ② ③ ⑤ hold 3s · ④ holds 5s (its line is much longer) */
+#intro.play .l1{animation:inIn .45s cubic-bezier(.22,.8,.3,1) .15s both,inOut .45s cubic-bezier(.22,.8,.3,1) 3.15s forwards;}
+#intro.play .l2{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 3.35s both,inOut .45s cubic-bezier(.22,.8,.3,1) 6.35s forwards;}
+#intro.play .l3{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 6.55s both,inOut .45s cubic-bezier(.22,.8,.3,1) 9.55s forwards;}
+#intro.play .l4{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 9.75s both,inOut .45s cubic-bezier(.22,.8,.3,1) 14.75s forwards;}
+#intro.play .l5{animation:inIn .45s cubic-bezier(.22,.8,.3,1) 14.95s both,inOut .45s cubic-bezier(.22,.8,.3,1) 17.95s forwards;}
 body.intro-lock{overflow:hidden;}
 @media (prefers-reduced-motion:reduce){#intro{display:none;}body.intro-lock{overflow:auto;}}
 </style>
@@ -58,6 +76,16 @@ body.intro-lock{overflow:hidden;}
     <p class="in-line l5"><span class="b">AIRCA<b>F</b>E</span><span class="sub"><span class="en">This is what Bestar Coffee needs</span><span class="zh">这正是「比星咖啡」需要的</span></span></p>
   </div>
   <span class="in-rule"></span>
+  <div class="in-count" id="inCount" aria-hidden="true">
+    <div class="in-ring">
+      <svg viewBox="0 0 84 84">
+        <circle class="trk" cx="42" cy="42" r="37"></circle>
+        <circle class="bar" id="inBar" cx="42" cy="42" r="37"></circle>
+      </svg>
+      <span class="in-num" id="inNum">3</span>
+    </div>
+    <span class="in-step" id="inStep">1 / 5</span>
+  </div>
   <span class="in-skip" id="inSkip"><span class="en">Skip</span><span class="zh">跳过</span></span>
 </div>
 
@@ -329,7 +357,7 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
 </script>
 
 <script>
-/* ===== intro splash driver ===== */
+/* ===== intro splash driver + synchronised countdown ===== */
 (function () {
   var intro = document.getElementById("intro");
   if (!intro) return;
@@ -338,18 +366,70 @@ window.addEventListener("langchange", function () { setTimeout(renderAll, 0); })
     document.body.classList.remove("intro-lock");
     return;
   }
-  var done = false;
+  var numEl = document.getElementById("inNum");
+  var stepEl = document.getElementById("inStep");
+  var barEl = document.getElementById("inBar");
+  var raf = 0, done = false;
+
   function finish() {
     if (done) return;
     done = true;
+    if (raf) cancelAnimationFrame(raf);
     intro.classList.add("out");
     document.body.classList.remove("intro-lock");
     setTimeout(function () { if (intro.parentNode) intro.parentNode.removeChild(intro); }, 750);
   }
-  requestAnimationFrame(function () { requestAnimationFrame(function () { intro.classList.add("play"); }); });
-  setTimeout(finish, 17900);
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      intro.classList.add("play");
+      startCountdown();
+    });
+  });
+  setTimeout(finish, 18600);
   intro.addEventListener("click", finish);
   document.addEventListener("keydown", function onkey() { finish(); document.removeEventListener("keydown", onkey); });
+
+  /* Each slogan carries two animations — fade-in and fade-out. The distance
+     between the two delays is the hold time, so the timer is DERIVED from the
+     stylesheet and can never drift away from the animation it is counting. */
+  function startCountdown() {
+    var lines = [].slice.call(intro.querySelectorAll(".in-line"));
+    var C = 2 * Math.PI * 37;
+    barEl.setAttribute("stroke-dasharray", C.toFixed(2));
+    var steps = lines.map(function (el) {
+      var cs = getComputedStyle(el);
+      var d = cs.animationDelay.split(",");
+      var tIn = parseFloat(d[0]) || 0;
+      var tOut = d.length > 1 ? (parseFloat(d[1]) || tIn) : tIn;
+      var hold = Math.max(1, tOut - tIn);
+      return { t: tIn, hold: hold, secs: Math.ceil(hold - 0.01) };
+    });
+    var t0 = performance.now(), lastN = -1, lastI = -1, lastOff = -1;
+
+    (function tick() {
+      if (done) return;
+      var t = (performance.now() - t0) / 1000;
+      var i = 0;
+      for (var k = 0; k < steps.length; k++) if (t >= steps[k].t) i = k;
+      var s = steps[i], el = t - s.t;
+      var p = Math.min(1, Math.max(0, el / s.hold));
+      var n = Math.max(1, Math.min(s.secs, Math.ceil(s.hold - el - 0.04)));
+
+      if (n !== lastN) {
+        numEl.textContent = n;
+        numEl.classList.remove("tick");
+        void numEl.offsetWidth;          /* restart the pulse */
+        numEl.classList.add("tick");
+        lastN = n;
+      }
+      if (i !== lastI) { stepEl.textContent = (i + 1) + " / " + steps.length; lastI = i; }
+      var off = Math.round(C * p * 100) / 100;
+      if (off !== lastOff) { barEl.setAttribute("stroke-dashoffset", off); lastOff = off; }
+
+      raf = requestAnimationFrame(tick);
+    })();
+  }
 })();
 </script>
 </body>
